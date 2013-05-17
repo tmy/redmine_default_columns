@@ -8,7 +8,7 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_default_columns
     author 'Vitaly Klimov'
     author_url 'mailto:vitaly.klimov@snowbirdgames.com'
     description 'Plugin allows to apply default queries for individual project or for projects based on their type.'
-    version '0.0.8'
+    version '0.1.0'
 
     settings(:partial => 'settings/default_columns_settings',
              :default => {
