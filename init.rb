@@ -1,14 +1,13 @@
 require 'redmine'
 require 'query_per_project_constants'
-require 'query_per_project_patches'
 
-unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_default_columns)
-  Redmine::Plugin.register :redmine_default_columns do
+unless Redmine::Plugin.registered_plugins.keys.include?(QPP_Constants::PLUGIN_NAME)
+  Redmine::Plugin.register QPP_Constants::PLUGIN_NAME do
     name 'Default queries per project'
     author 'Vitaly Klimov'
     author_url 'mailto:vitaly.klimov@snowbirdgames.com'
     description 'Plugin allows to apply default queries for individual project or for projects based on their type.'
-    version '0.1.0'
+    version '0.1.1'
 
     settings(:partial => 'settings/default_columns_settings',
              :default => {
@@ -24,10 +23,12 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_default_columns
   end
 end
 
-Dispatcher.to_prepare :redmine_default_columns do
-  require_dependency 'queries_helper'
-
-  unless QueriesHelper.included_modules.include? QueryPerProject::Patches::QueriesHelperPatch
-    QueriesHelper.send(:include, QueryPerProject::Patches::QueriesHelperPatch)
+if Rails::VERSION::MAJOR >= 3
+  ActionDispatch::Callbacks.to_prepare do
+    require 'query_per_project_patches'
+  end
+else
+  Dispatcher.to_prepare QPP_Constants::PLUGIN_NAME do
+    require_dependency 'query_per_project_patches'
   end
 end

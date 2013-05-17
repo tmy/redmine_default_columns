@@ -15,7 +15,7 @@ h3. Features
 
 h3. Details
 
-This plugin is very useful if you are using Redmine projects for more than one purpose. For example, we have projects for bug-tracking as well as for project management and invoice tracking. I was really missing the ability to define default query for project or group of projects - and without it it was very inconvenient to create set of public queries which you had manually apply each time you switch projects. 
+This plugin is very useful if you are using Redmine projects for more than one purpose. For example, we have projects for bug-tracking as well as for project management and invoice tracking. I was really missing the ability to define default query for project or group of projects - and without it it was very inconvenient to create set of public queries which you had manually apply each time you switch projects.
 
 Also in latest versions plugin allows to define default view for each user - which is very handy, because columns to display could differ from user to user.
 
@@ -88,6 +88,10 @@ h3. Installation and Setup
 # Login as administrator and configure the plugin (Administration > Plugins > Configure)
 
 h3. Release history
+
+0.1.1
+
+* Rails 3 (Redmine 2.x) compatibility
 
 0.1.0
 
