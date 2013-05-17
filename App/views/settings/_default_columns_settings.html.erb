@@ -11,7 +11,22 @@
 </p>
 
 <p>
+  <%= label_tag('settings[my_global_query_name]', l(:label_plugin_dc_my_global_name)) %>
+	<%= text_field_tag 'settings[my_global_query_name]', @settings['my_global_query_name'], {:size => 30, :maxlength => 30 } %>
+</p>
+
+<p>
+  <%= label_tag('settings[my_default_query_name]', l(:label_plugin_dc_my_default_name)) %>
+	<%= text_field_tag 'settings[my_default_query_name]', @settings['my_default_query_name'], {:size => 30, :maxlength => 30 } %>
+</p>
+
+<p>
   <%= label_tag('settings[default_query_name]', l(:label_plugin_dc_default_name)) %>
 	<%= text_field_tag 'settings[default_query_name]', @settings['default_query_name'], {:size => 30, :maxlength => 30 } %>
+</p>
+
+<p>
+  <%= label_tag('settings[my_home_query_name]', l(:label_plugin_dc_my_home_default_name)) %>
+	<%= text_field_tag 'settings[my_home_query_name]', @settings['my_home_query_name'], {:size => 30, :maxlength => 30 } %>
 </p>
 
