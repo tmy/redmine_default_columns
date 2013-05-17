@@ -5,7 +5,7 @@ module SettingsHelper
 		
 	def dc_fill_projects_dropdown(project_id) 
     
-		plist = Project.find(:all, :conditions => Project.visible_by )
+		plist = Project.find(:all, :conditions => Project.visible_condition(User.current) )
 	    
 		return project_tree_options_for_select(plist, :selected => Project.find_by_id(project_id) )
 	end

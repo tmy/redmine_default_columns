@@ -1,9 +1,9 @@
-h1. Redmine Default Columns plugin
+h2. Redmine Default Columns plugin
 
 Plugin allows to apply default queries for individual project or for projects based on their type.
 Also it allows users to define their own default queries for each project or for all projects.
 
-h1. Features
+h2. Features
 
 * Uses existing query system thus providing compatibility with future Redmine versions
 * Allows to define default query on project by project basis
@@ -13,7 +13,7 @@ h1. Features
 * Allows to define user his/hers global query for displaying all issues
 * Allows to define user query that will be applied individually for each user allowing to directly jump to project and apply specefic query upon logon
 
-h1. Details
+h2. Details
 
 This plugin is very useful if you are using Redmine projects for more than one purpose. For example, we have projects for bug-tracking as well as for project management and invoice tracking. I was really missing the ability to define default query for project or group of projects - and without it it was very inconvenient to create set of public queries which you had manually apply each time you switch projects. 
 
@@ -21,7 +21,7 @@ Also in latest versions plugin allows to define default view for each user - whi
 
 This plugin came as an answer to my own request #3967 (http://www.redmine.org/issues/3967)
 
-h1. Logic behind the plugin
+h2. Logic behind the plugin
 
 First of all - plugin uses existing queries system thus (hopefully) maintaining maximal compatibility with further Redmine versions. It uses existing queries and small patch to the Issues Controller to apply default query if no query is defined.
 
@@ -35,7 +35,7 @@ For redirection to user defined project with user defined query, *MyHome* query 
 
 Please note that all user queries should not be public.
 
-h1. How it works
+h2. How it works
 
 There are several nested levels by which default query is determined
 
@@ -60,7 +60,7 @@ When invoked, it searches for query named *MyHome* (by default, redifinable in s
 
 Also it substitutes views/issues/index.rhtml to collapse filters pane when any of the queries above applied.
 
-h1. Example of usage
+h2. Example of usage
 
 For example, we have projects of three several types - one for bug-tracking, another one for PM and another one for invoices. Also we have one special project named 'SpecialCase' for whom we want to have its own default query.
 
@@ -77,9 +77,10 @@ We all set for now.
 
 What would happen if we will decide to view issues in the project with custom field 'Type' set to 'Bugs'? Plugin will lookup query named 'Default_Bugs' in project 'DefaultQueries' and apply it to the issues view! Same will be done for projects with type 'Tasks' and 'Invoices' - queries named 'Default_Tasks' and 'Default_Invoices' will be applied to their views. If we will choose project named 'SpecialCase' the query named 'Default' will be applied because it exists there regardless of the project type.
 
-h1. Installation and Setup
+h2. Installation and Setup
 
-1. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins
-2. Restart your Redmine web servers (e.g. mongrel, thin, mod_rails)
-3. Login as administrator and configure the plugin (Administration > Plugins > Configure)
+1. Please *do* remove folder _redmine_default_columns_ completely before installing new version
+2. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins
+3. Restart your Redmine web servers (e.g. mongrel, thin, mod_rails)
+4. Login as administrator and configure the plugin (Administration > Plugins > Configure)
 

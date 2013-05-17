@@ -6,9 +6,9 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_default_columns
   Redmine::Plugin.register :redmine_default_columns do
     name 'Default queries per project'
     author 'Vitaly Klimov'
-    author_url 'mailto:vvk@snowball.ru'
+    author_url 'mailto:vitaly.klimov@snowbirdgames.com'
     description 'Plugin allows to apply default queries for individual project or for projects based on their type.'
-    version '0.0.6'
+    version '0.0.7'
 
     settings(:partial => 'settings/default_columns_settings',
              :default => {
@@ -20,7 +20,7 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_default_columns
                'my_home_query_name' => QPP_Constants::MY_QUERY_HOME_NAME
              })
 
-    requires_redmine :version_or_higher => '1.2.0'
+    requires_redmine :version_or_higher => '1.3.0'
   end
 end
 
