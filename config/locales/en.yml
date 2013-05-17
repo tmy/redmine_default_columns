@@ -1,0 +1,5 @@
+en:
+  label_plugin_dc_query_project: "Project with default queries"
+  label_plugin_dc_custom_field_name: "Custom field to define type"
+  label_plugin_dc_default_name: "Default query name"
+
