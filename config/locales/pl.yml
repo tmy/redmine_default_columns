@@ -1,0 +1,8 @@
+pl:
+  label_plugin_dc_query_project: "Projekt z domyślną kwerendą"
+  label_plugin_dc_custom_field_name: "Własne pole, które definiuje kwerendę"
+  label_plugin_dc_default_name: "Nazwa domyślnej kwerendy"
+  label_plugin_dc_my_default_name: "Nazwa domyślnej kwerendy użytkownika"
+  label_plugin_dc_my_global_name: "Nazwa domyślnej globalnej kwerendy użytkownika"
+  label_plugin_dc_my_home_default_name: "Nazwa domyślnej kwerendy na stronę domową użytkownika"
+
